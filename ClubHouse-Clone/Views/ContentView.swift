@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedRoom: Room? = .none
     var body: some View {
         ZStack {
             VStack{
                 HomeNavigationView()
-                BodyView()
+                BodyView(selectedRoom: $selectedRoom)
                 Spacer()
             }
             .background(Color("color_background"))
             FooterView()
         }
+        .fullScreenCover(item: $selectedRoom) { room in
+            RoomView(room: room)
+        }
     }
 }
-
-
 struct HomeNavigationView: View {
     var body: some View {
         HStack {
@@ -39,11 +41,12 @@ struct HomeNavigationView: View {
 }
 
 struct BodyView: View {
+    @Binding var selectedRoom: Room?
     var body: some View {
         ScrollView {
             EventView()
                 .padding(.bottom, 20)
-            RoomView()
+            RoomCellView(selectedRoom: $selectedRoom)
         }
     }
 }
@@ -61,11 +64,15 @@ struct EventView: View {
     }
 }
 
-struct RoomView: View {
+struct RoomCellView: View {
+    @Binding var selectedRoom: Room?
     var body: some View {
         VStack {
             ForEach(Room.data) { room in
                 RoomCell(room: room)
+                    .onTapGesture {
+                        selectedRoom = room
+                    }
                     .padding(.bottom)
             }
         }
