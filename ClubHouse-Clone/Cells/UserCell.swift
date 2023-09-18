@@ -19,14 +19,17 @@ struct UserCell: View {
                 .frame(width: SIZE, height: SIZE)
                 .clipped()
                 .cornerRadius(isLarge ? 30 : 22)
-                .overlay(RoundedRectangle(cornerRadius: isLarge ? 30 : 20).stroke(Color.gray.opacity(0.2), lineWidth: 0.6))
-                .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.white, lineWidth: index == 1 ? 6 : 0))
-                .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color("color_accent").opacity(0.5),lineWidth: index == 1 ? 2.5 : 0))
+                .overlay(RoundedRectangle(cornerRadius: isLarge ? 30 : 20)
+                    .stroke(Color.gray.opacity(0.2), lineWidth: 0.6))
+                .overlay(RoundedRectangle(cornerRadius: 30)
+                    .stroke(Color.white, lineWidth: index == 1 ? 6 : 0))
+                .overlay(RoundedRectangle(cornerRadius: 30)
+                    .stroke(Color("color_accent")
+                        .opacity(0.5),lineWidth: index == 1 ? 2.5 : 0))
             HStack(spacing: 4) {
                 if index < 5 { Image("moderator").resizable().frame(width: 14, height: 14) }
                 Text(Names.names[index].split(separator: " ")[0])
                     .font(.system(size: 14))
-                    .bold()
             }
         }
     }

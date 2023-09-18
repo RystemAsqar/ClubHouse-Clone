@@ -10,6 +10,7 @@
 		4F1718BB2AAA722F001C047C /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1718BA2AAA722F001C047C /* RoomView.swift */; };
 		4F1718BD2AAA8CDA001C047C /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1718BC2AAA8CDA001C047C /* UserCell.swift */; };
 		4F1718BF2AAA8E27001C047C /* FollowersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1718BE2AAA8E27001C047C /* FollowersView.swift */; };
+		4F2C2D802AAB483D00F5E290 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C2D7F2AAB483D00F5E290 /* ProfileView.swift */; };
 		4FF417332AA9F51A00B93B49 /* ClubHouse_CloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF417322AA9F51A00B93B49 /* ClubHouse_CloneApp.swift */; };
 		4FF417352AA9F51A00B93B49 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF417342AA9F51A00B93B49 /* ContentView.swift */; };
 		4FF417372AA9F51D00B93B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FF417362AA9F51D00B93B49 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		4F1718BA2AAA722F001C047C /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 		4F1718BC2AAA8CDA001C047C /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		4F1718BE2AAA8E27001C047C /* FollowersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersView.swift; sourceTree = "<group>"; };
+		4F2C2D7F2AAB483D00F5E290 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		4FF4172F2AA9F51A00B93B49 /* ClubHouse-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ClubHouse-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF417322AA9F51A00B93B49 /* ClubHouse_CloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubHouse_CloneApp.swift; sourceTree = "<group>"; };
 		4FF417342AA9F51A00B93B49 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +50,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F2345E52AB9061600F9F72B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4FF4174B2AAA302100B93B49 /* EventCell.swift */,
+				4FF417492AAA2FE600B93B49 /* RoomCell.swift */,
+				4F1718BC2AAA8CDA001C047C /* UserCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4F2345E62AB9066300F9F72B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4FF417322AA9F51A00B93B49 /* ClubHouse_CloneApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		4FF417262AA9F51A00B93B49 = {
 			isa = PBXGroup;
 			children = (
@@ -67,9 +87,10 @@
 		4FF417312AA9F51A00B93B49 /* ClubHouse-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				4F2345E62AB9066300F9F72B /* App */,
+				4F2345E52AB9061600F9F72B /* Cells */,
 				4FF417462AAA2E3B00B93B49 /* Models */,
 				4FF417452AAA2E3600B93B49 /* Views */,
-				4FF417322AA9F51A00B93B49 /* ClubHouse_CloneApp.swift */,
 				4FF417362AA9F51D00B93B49 /* Assets.xcassets */,
 				4FF417382AA9F51D00B93B49 /* Preview Content */,
 			);
@@ -87,12 +108,10 @@
 		4FF417452AAA2E3600B93B49 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4FF4174B2AAA302100B93B49 /* EventCell.swift */,
-				4FF417492AAA2FE600B93B49 /* RoomCell.swift */,
-				4F1718BC2AAA8CDA001C047C /* UserCell.swift */,
 				4FF417342AA9F51A00B93B49 /* ContentView.swift */,
 				4F1718BA2AAA722F001C047C /* RoomView.swift */,
 				4F1718BE2AAA8E27001C047C /* FollowersView.swift */,
+				4F2C2D7F2AAB483D00F5E290 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +205,7 @@
 				4F1718BD2AAA8CDA001C047C /* UserCell.swift in Sources */,
 				4FF4174C2AAA302100B93B49 /* EventCell.swift in Sources */,
 				4FF4174A2AAA2FE600B93B49 /* RoomCell.swift in Sources */,
+				4F2C2D802AAB483D00F5E290 /* ProfileView.swift in Sources */,
 				4FF417482AAA2E7B00B93B49 /* EventData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

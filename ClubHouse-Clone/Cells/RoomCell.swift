@@ -56,7 +56,6 @@ struct RoomCell: View {
                     ForEach(room.names, id: \.self) { name in
                         Text("\(name) 💬")
                             .font(.system(size: 16))
-                            .bold()
                     }
                     HStack {
                         HStack(spacing:4) {

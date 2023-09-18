@@ -10,17 +10,19 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedRoom: Room? = .none
     var body: some View {
-        ZStack {
-            VStack{
-                HomeNavigationView()
-                BodyView(selectedRoom: $selectedRoom)
-                Spacer()
+        NavigationView {
+            ZStack {
+                VStack{
+                    HomeNavigationView()
+                    BodyView(selectedRoom: $selectedRoom)
+                    Spacer()
+                }
+                .background(Color("color_background"))
+                FooterView()
             }
-            .background(Color("color_background"))
-            FooterView()
-        }
-        .fullScreenCover(item: $selectedRoom) { room in
-            RoomView(room: room)
+            .fullScreenCover(item: $selectedRoom) { room in
+                RoomView(room: room)
+            }
         }
     }
 }
@@ -32,8 +34,12 @@ struct HomeNavigationView: View {
             Button {} label: {Image("invite")}
             Button {} label: {Image("calendar")}
             Button {} label: {Image("notification")}
-            Button {} label: {Image("xs")}
-            .padding(.trailing)
+            NavigationLink {
+                ProfileView()
+            } label: {
+                Image("xs")
+                    .padding(.trailing)
+            }
         }
         .padding()
         .background(.clear)
@@ -92,7 +98,6 @@ struct FooterView: View {
                     .frame(height: 80)
                     .foregroundColor(Color("color_background"))
                     .blur(radius: 20).offset(y: 6.0)
-                
                 HStack {
                     Button(action: {}, label: {
                         Text("+ Start a room")
@@ -108,7 +113,6 @@ struct FooterView: View {
                         Image("menu")
                             .padding(.bottom, 18)
                     }
-
                 }
             }.ignoresSafeArea(.all)
         }
